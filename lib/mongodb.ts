@@ -22,9 +22,11 @@ export const getDBClient = async (): Promise<Db> => {
   return client.db("portfolio");
 };
 
-export const getUserCollection = async (): Promise<Collection> => {
+export const getUserCollection = async (): Promise<
+  Collection<userDataType>
+> => {
   const db = await getDBClient();
-  return db.collection("userData");
+  return db.collection<userDataType>("userData");
 };
 
 export default clientPromise;
