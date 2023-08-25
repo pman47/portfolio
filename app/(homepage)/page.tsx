@@ -1,15 +1,14 @@
-import { getUserCollection } from "@/lib/mongodb";
+import getUserData from "@/actions/getUserData";
 
 export default async function Home() {
-  const collection = await getUserCollection();
-  const data = (await collection.findOne({})) as userDataType | null;
+  const userData = await getUserData();
   return (
     <main>
       <div className="">
-        {data && (
+        {userData && (
           <div>
-            <h1>{data.name}</h1>
-            <h2>{data.email}</h2>
+            <h1>{userData.name}</h1>
+            <h2>{userData.email}</h2>
           </div>
         )}
       </div>
