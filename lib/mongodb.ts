@@ -1,4 +1,4 @@
-import { MongoClient } from "mongodb";
+import { MongoClient, Db, Collection } from "mongodb";
 
 if (!process.env.MONGODB_URI) {
   throw new Error('Invalid environment variable: "MONGODB_URI"');
@@ -7,7 +7,7 @@ if (!process.env.MONGODB_URI) {
 const uri = process.env.MONGODB_URI;
 const options = {};
 
-let mongoClient;
+let mongoClient: MongoClient;
 let clientPromise: Promise<MongoClient>;
 
 if (!process.env.MONGODB_URI) {
@@ -17,12 +17,12 @@ if (!process.env.MONGODB_URI) {
 mongoClient = new MongoClient(uri, options);
 clientPromise = mongoClient.connect();
 
-export const getDBClient = async () => {
+export const getDBClient = async (): Promise<Db> => {
   const client = await clientPromise;
-  return await client.db("portfolio");
+  return client.db("portfolio");
 };
 
-export const getUserCollection = async () => {
+export const getUserCollection = async (): Promise<Collection> => {
   const db = await getDBClient();
   return db.collection("userData");
 };
