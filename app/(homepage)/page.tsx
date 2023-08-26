@@ -17,7 +17,7 @@ export default async function Home() {
         <HeroSection />
         {/* Basic User Details Component */}
         <Suspense
-          fallback={<div className="p-5 animate-bounce">Loading...</div>}
+          fallback={<div className="p-5 animate-bounce">Loading....</div>}
         >
           {/* @ts-expect-error */}
           <UserDetails />
