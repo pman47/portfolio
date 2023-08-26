@@ -5,7 +5,7 @@ export default async function Home() {
   return (
     <main>
       <BackgroundImage />
-      <div className="container mx-auto">
+      <div className="customContainer mx-auto">
         {/* Basic User Details Component */}
         <UserDetails />
 
