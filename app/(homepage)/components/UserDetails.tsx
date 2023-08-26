@@ -1,17 +1,16 @@
-import BackgroundImage from "@/components/BackgroundImage";
-import HeroSection from "@/components/HeroSection";
-import Image from "next/image";
-import { FC } from "react";
+import getUserData from "@/actions/getUserData";
+import BasicIntroduction from "@/components/BasicIntroduction";
 
 interface UserDetailsProps {}
 
-const UserDetails: FC<UserDetailsProps> = ({}) => {
+const UserDetails = async ({}: UserDetailsProps) => {
+  const data = await getUserData();
+
+  if (!data) return null;
   return (
     <div>
-      {/* Hero section with profile pic and some social media connections like linkedIn */}
-      <HeroSection />
-
       {/* Basic Introduction */}
+      <BasicIntroduction userData={data} />
       {/* About Me */}
       {/* Tech i use */}
     </div>

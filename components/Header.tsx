@@ -12,7 +12,7 @@ const Header: FC<HeaderProps> = ({}) => {
         <div className="customContainer mx-auto h-full flex flex-row justify-between items-center px-3">
           {/* Logo */}
           <div className="flex flex-row items-center cursor-pointer h-full">
-            <Ghost size={20} />
+            {/* <Ghost size={20} /> */}
             <span className={`text-3xl ${lobster.className}`}>M</span>
           </div>
 
