@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FC } from "react";
+import ConnectList from "./ConnectList";
 
 interface HeroSectionProps {}
 
@@ -32,9 +33,7 @@ const HeroSection: FC<HeroSectionProps> = ({}) => {
           className="object-cover"
         />
       </div>
-      <div className="flex flex-1 flex-wrap items-center justify-end space-x-1 xs:space-x-2">
-        Links
-      </div>
+      <ConnectList />
     </div>
   );
 };
