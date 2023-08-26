@@ -18,6 +18,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-neutral-800 text-neutral-200 bg-gradient-to-bl from-neutral-800 to-neutral-900">
         <Header />
         {children}
+        {/* Footer */}
       </body>
     </html>
   );
