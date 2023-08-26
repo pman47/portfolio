@@ -16,7 +16,9 @@ export default async function Home() {
       <div className="customContainer mx-auto">
         <HeroSection />
         {/* Basic User Details Component */}
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense
+          fallback={<div className="p-5 animate-bounce">Loading...</div>}
+        >
           {/* @ts-expect-error */}
           <UserDetails />
         </Suspense>

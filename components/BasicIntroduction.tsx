@@ -1,5 +1,3 @@
-import getUserData from "@/actions/getUserData";
-
 interface BasicIntroductionProps {
   userData: {
     name: string;
