@@ -19,7 +19,6 @@ export default async function Home() {
         <Suspense
           fallback={<div className="p-5 animate-bounce">Loading....</div>}
         >
-          {/* @ts-expect-error */}
           <UserDetails />
         </Suspense>
 
