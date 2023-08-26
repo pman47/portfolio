@@ -5,7 +5,7 @@ interface BackgroundImageProps {}
 
 const BackgroundImage: FC<BackgroundImageProps> = ({}) => {
   return (
-    <div className="relative w-full min-h-[200px]">
+    <div className="relative w-full h-36 sm:h-44 md:h-52">
       <Image
         src={"/images/background.jpg"}
         alt="Background Image"

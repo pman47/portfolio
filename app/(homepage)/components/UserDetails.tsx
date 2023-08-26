@@ -9,6 +9,7 @@ const UserDetails: FC<UserDetailsProps> = ({}) => {
   return (
     <div>
       {/* Hero section with profile pic and some social media connections like linkedIn */}
+      <HeroSection />
 
       {/* Basic Introduction */}
       {/* About Me */}
