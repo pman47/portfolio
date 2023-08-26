@@ -15,11 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen">
-        <div className="container h-screen mx-auto">
-          <Header />
-          {children}
-        </div>
+      <body className="min-h-screen bg-neutral-800 text-neutral-200">
+        <Header />
+        <div className="h-16"></div>
+        {children}
       </body>
     </html>
   );
