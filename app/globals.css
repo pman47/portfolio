@@ -5,3 +5,7 @@
 .customContainer {
   @apply container max-w-[750px];
 }
+
+.iconButtonStyle {
+  @apply flex items-center justify-center h-12 w-12 rounded-lg hover:bg-neutral-800 hover:border-[1px] border-neutral-700 transition duration-300;
+}

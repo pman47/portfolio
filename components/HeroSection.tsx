@@ -10,7 +10,7 @@ const HeroSection: FC<HeroSectionProps> = ({}) => {
       <div
         className="
           relative
-          z-10
+          z-0
           -mt-[55px]
           sm:-mt-20
           md:-mt-24
