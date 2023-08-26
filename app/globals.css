@@ -9,3 +9,11 @@
 .iconButtonStyle {
   @apply flex items-center justify-center h-12 w-12 rounded-lg hover:bg-neutral-800 hover:border-[1px] border-neutral-700 transition duration-300;
 }
+
+.gradient-linear {
+  @apply bg-gradient-to-r from-[#b6f3c9] to-[#4766f4];
+}
+
+.gradient-linear-text {
+  @apply gradient-linear text-transparent bg-clip-text;
+}
