@@ -1,14 +1,18 @@
+import BackgroundImage from "@/components/BackgroundImage";
 import UserDetails from "./components/UserDetails";
 
 export default async function Home() {
   return (
-    <main className="container mx-auto">
-      {/* Basic User Details Component */}
-      <UserDetails />
+    <main>
+      <BackgroundImage />
+      <div className="container mx-auto">
+        {/* Basic User Details Component */}
+        <UserDetails />
 
-      {/* Projects */}
+        {/* Projects */}
 
-      {/* Experience */}
+        {/* Experience */}
+      </div>
     </main>
   );
 }
