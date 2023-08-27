@@ -4,5 +4,5 @@ interface userDataType {
   email: string;
   headline: string;
   about_me: string[];
-  technologies: string[];
+  technologies: string;
 }
