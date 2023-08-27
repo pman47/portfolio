@@ -13,7 +13,7 @@ const UserDetails = async ({}: UserDetailsProps) => {
       {/* Basic Introduction */}
       <BasicIntroduction userData={data} />
       {/* About Me */}
-      <AboutMe userData={data} />
+      <AboutMe about_me={data.about_me} />
       {/* Tech i use */}
     </div>
   );

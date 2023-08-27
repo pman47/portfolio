@@ -2,11 +2,10 @@ import { FC } from "react";
 import AnimateHeaderBox from "./AnimateHeaderBox";
 
 interface AboutMeProps {
-  userData: userDataType;
+  about_me: userDataType["about_me"];
 }
 
-const AboutMe: FC<AboutMeProps> = ({ userData }) => {
-  const { about_me } = userData;
+const AboutMe: FC<AboutMeProps> = ({ about_me }) => {
   return (
     <AnimateHeaderBox headerText="About Me">
       <div className="mt-3 space-y-2">
