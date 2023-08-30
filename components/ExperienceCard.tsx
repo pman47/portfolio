@@ -52,8 +52,8 @@ const ExperienceCard: FC<ExperienceCardProps> = ({ experience }) => {
       border-dashed
       border-neutral-700
       border-[1px]
-      hover:border-solid
-      hover:bg-neutral-800/30
+      group-hover:border-solid
+      group-hover:bg-neutral-800/30
       duration-300
       transition-all
       space-y-2
@@ -72,19 +72,27 @@ const ExperienceCard: FC<ExperienceCardProps> = ({ experience }) => {
           />
         </div>
         <div>
+          <div className="space-x-2">
+            <span
+              className="text-lg md:text-xl text-neutral-400 font-bold cursor-pointer group-hover:text-neutral-300"
+              onClick={handleNavigation}
+            >
+              {experience.title}
+            </span>
+          </div>
           <p
-            className="text-lg md:text-xl text-neutral-400 font-bold cursor-pointer group-hover:text-neutral-300"
-            onClick={handleNavigation}
-          >
-            {experience.title}
-          </p>
-          <p
-            className="text-base text-neutral-400 font-medium space-x-2 cursor-pointer"
+            className="text-base text-neutral-400 font-medium space-x-1 cursor-pointer"
             onClick={handleNavigation}
           >
             <span>{experience.company_name}</span>
             <span>•</span>
             <span>{experience.job_type}</span>
+            {experience?.onsite_remote_hybrid && (
+              <>
+                <span>•</span>
+                <span>{experience.onsite_remote_hybrid}</span>
+              </>
+            )}
           </p>
           <p className="text-sm text-neutral-400 font-medium space-x-2">
             <span>{start_date_text}</span>
@@ -95,6 +103,7 @@ const ExperienceCard: FC<ExperienceCardProps> = ({ experience }) => {
           </p>
         </div>
       </div>
+      <div className="border-dashed border-t-[1px] h-1 w-full border-neutral-700 group-hover:border-solid"></div>
       <div className="text-md text-neutral-400 font-medium">
         {description.length === 1 ? (
           <p>{description[0]}</p>
