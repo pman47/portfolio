@@ -42,6 +42,10 @@ const ExperienceCard: FC<ExperienceCardProps> = ({ experience }) => {
     window.open(experience.company_url, "_blank");
   };
 
+  const Divider = () => (
+    <div className="border-dashed border-t-[1px] h-1 w-full border-neutral-700 group-hover:border-solid" />
+  );
+
   return (
     <div
       className={`
@@ -113,8 +117,7 @@ const ExperienceCard: FC<ExperienceCardProps> = ({ experience }) => {
         </div>
       </div>
 
-      {/* Divider */}
-      <div className="border-dashed border-t-[1px] h-1 w-full border-neutral-700 group-hover:border-solid" />
+      <Divider />
 
       {/* Description */}
       <div className="text-md text-neutral-400 font-medium">
@@ -129,6 +132,21 @@ const ExperienceCard: FC<ExperienceCardProps> = ({ experience }) => {
             ))}
           </ul>
         )}
+      </div>
+
+      <Divider />
+
+      {/* Skills */}
+      <div className="flex flex-row flex-wrap gap-1">
+        <span className="text-neutral-400">Skills : </span>
+        {experience.skills.map((skill, index) => (
+          <span
+            key={index}
+            className="px-2 py-[2px] bg-neutral-800 rounded-md text-neutral-400 text-sm"
+          >
+            {skill}
+          </span>
+        ))}
       </div>
     </div>
   );
