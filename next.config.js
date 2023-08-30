@@ -2,6 +2,12 @@
 const nextConfig = {
   images: {
     favicon: "/images/favicon.png",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "*",
+      },
+    ],
   },
 };
 
