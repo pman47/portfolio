@@ -29,4 +29,11 @@ export const getUserCollection = async (): Promise<
   return db.collection<userDataType>("userData");
 };
 
+export const getExperienceCollection = async (): Promise<
+  Collection<experienceType>
+> => {
+  const db = await getDBClient();
+  return db.collection<experienceType>("experience");
+};
+
 export default clientPromise;
