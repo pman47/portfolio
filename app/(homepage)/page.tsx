@@ -29,8 +29,6 @@ export default async function Home() {
           <ExperienceDetails />
         </Suspense>
 
-        {/* Experience */}
-
         {/* Projects */}
       </div>
     </main>
