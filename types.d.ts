@@ -7,7 +7,7 @@ interface userDataType {
   technologies: string;
 }
 
-interface ExperienceType {
+interface experienceType {
   _id: string;
   title: string;
   company_name: string;
