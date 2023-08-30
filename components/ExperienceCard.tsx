@@ -59,7 +59,9 @@ const ExperienceCard: FC<ExperienceCardProps> = ({ experience }) => {
       space-y-2
       `}
     >
+      {/* Job Details */}
       <div className="flex flex-col items-start md:flex-row gap-2">
+        {/* Company Image */}
         <div
           className="relative w-14 h-14 rounded-xl overflow-hidden flex items-center justify-center bg-neutral-900 border-dashed border-[1px] border-neutral-700 group-hover:border-solid cursor-pointer"
           onClick={handleNavigation}
@@ -71,7 +73,10 @@ const ExperienceCard: FC<ExperienceCardProps> = ({ experience }) => {
             className="object-cover p-2"
           />
         </div>
+
+        {/* Job Details */}
         <div>
+          {/* Job Title */}
           <div className="space-x-2">
             <span
               className="text-lg md:text-xl text-neutral-400 font-bold cursor-pointer group-hover:text-neutral-300"
@@ -80,6 +85,8 @@ const ExperienceCard: FC<ExperienceCardProps> = ({ experience }) => {
               {experience.title}
             </span>
           </div>
+
+          {/* Company name, Job Type, Job Location */}
           <p
             className="text-base text-neutral-400 font-medium space-x-1 cursor-pointer"
             onClick={handleNavigation}
@@ -94,6 +101,8 @@ const ExperienceCard: FC<ExperienceCardProps> = ({ experience }) => {
               </>
             )}
           </p>
+
+          {/* Job Start and End Date with Duration */}
           <p className="text-sm text-neutral-400 font-medium space-x-2">
             <span>{start_date_text}</span>
             <span>-</span>
@@ -103,7 +112,11 @@ const ExperienceCard: FC<ExperienceCardProps> = ({ experience }) => {
           </p>
         </div>
       </div>
-      <div className="border-dashed border-t-[1px] h-1 w-full border-neutral-700 group-hover:border-solid"></div>
+
+      {/* Divider */}
+      <div className="border-dashed border-t-[1px] h-1 w-full border-neutral-700 group-hover:border-solid" />
+
+      {/* Description */}
       <div className="text-md text-neutral-400 font-medium">
         {description.length === 1 ? (
           <p>{description[0]}</p>
