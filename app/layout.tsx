@@ -8,6 +8,8 @@ export const metadata: Metadata = {
     "Software Developer | Full Stack Web Developer | MERN stack Developer",
 };
 
+export const revalidate = 0;
+
 export default function RootLayout({
   children,
 }: {

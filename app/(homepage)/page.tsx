@@ -10,6 +10,8 @@ const bricolage_Grotesque = Bricolage_Grotesque({
   subsets: ["latin"],
 });
 
+export const revalidate = 0;
+
 export default async function Home() {
   return (
     <main className={bricolage_Grotesque.className}>
