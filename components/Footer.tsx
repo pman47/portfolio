@@ -51,7 +51,7 @@ const Footer: FC<FooterProps> = ({}) => {
 
           {/* Mail to me */}
           <div className="mt-4 w-full flex items-center justify-center">
-            <a href="mailto:manishprajapatim416@gmail.com">
+            <a href={CONNECTION_URLS.MAIL_ME}>
               <div className="glassmorphism px-3 py-2 border-[1px] border-neutral-700">
                 <p className="flex flex-row items-center gap-2 text-sm">
                   <Mail size={24} /> <span>Get in touch</span>
