@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Manish Prajapati | Portfolio",
@@ -20,7 +21,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-neutral-900 text-neutral-200">
         <Header />
         {children}
-        {/* Footer */}
+        <Footer />
       </body>
     </html>
   );

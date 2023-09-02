@@ -1,25 +1,26 @@
 import { FC } from "react";
-import { Linkedin, Github } from "lucide-react";
+import { Linkedin, Github, Mail } from "lucide-react";
 import ConnectItem from "./ConnectItem";
+import { CONNECTION_URLS } from "@/lib/constants";
 
 interface ConnectListProps {}
 
 const connectItems = [
   {
     name: "LinkedIn",
-    icon: <Linkedin />,
-    href: "https://www.linkedin.com/in/pman47/",
+    icon: <Linkedin size={20} />,
+    href: CONNECTION_URLS.LINKEDIN,
   },
   {
     name: "Github",
-    icon: <Github />,
-    href: "https://github.com/pman47",
+    icon: <Github size={20} />,
+    href: CONNECTION_URLS.GITHUB,
   },
 ];
 
 const ConnectList: FC<ConnectListProps> = ({}) => {
   return (
-    <div className="flex flex-1 flex-wrap items-center justify-end space-x-1 xs:space-x-2">
+    <div className="flex flex-1 flex-wrap items-center justify-end space-x-1">
       {connectItems.map((item) => (
         <ConnectItem
           key={item.name}
