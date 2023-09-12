@@ -5,6 +5,7 @@ import UserDetails from "./components/UserDetails";
 
 import { Bricolage_Grotesque } from "next/font/google";
 import ExperienceDetails from "./components/ExperienceDetails";
+import ProjectDetails from "./components/ProjectDetails";
 const bricolage_Grotesque = Bricolage_Grotesque({
   weight: "400",
   subsets: ["latin"],
@@ -25,13 +26,19 @@ export default async function Home() {
           <UserDetails />
         </Suspense>
 
+        {/* Experience Details */}
         <Suspense
           fallback={<div className="p-5 animate-bounce">Loading....</div>}
         >
           <ExperienceDetails />
         </Suspense>
 
-        {/* Projects */}
+        {/* Projects Details */}
+        <Suspense
+          fallback={<div className="p-5 animate-bounce">Loading....</div>}
+        >
+          <ProjectDetails />
+        </Suspense>
       </div>
     </main>
   );
