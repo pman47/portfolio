@@ -36,4 +36,11 @@ export const getExperienceCollection = async (): Promise<
   return db.collection<experienceType>("experience");
 };
 
+export const getProjectCollection = async (): Promise<
+  Collection<projectType>
+> => {
+  const db = await getDBClient();
+  return db.collection<projectType>("projects");
+};
+
 export default clientPromise;

@@ -20,3 +20,14 @@ interface experienceType {
   description: string;
   skills: string[];
 }
+
+interface projectType {
+  _id: string;
+  title: string;
+  description: string;
+  github_url: string;
+  hosted_url: string;
+  thumbnail_url: string;
+  skills: string[];
+  createdAt: string;
+}
