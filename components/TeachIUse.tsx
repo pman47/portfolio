@@ -1,3 +1,4 @@
+import { Bone } from "lucide-react";
 import { FC } from "react";
 import AnimateHeaderBox from "./AnimateHeaderBox";
 
@@ -7,7 +8,7 @@ interface TeachIUseProps {
 
 const TeachIUse: FC<TeachIUseProps> = ({ technologies }) => {
   return (
-    <AnimateHeaderBox headerText="Skills">
+    <AnimateHeaderBox headerText="Skills" icon={<Bone size={18} />}>
       <div className="relative mt-3">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img

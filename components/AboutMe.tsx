@@ -1,3 +1,4 @@
+import { Megaphone } from "lucide-react";
 import { FC } from "react";
 import AnimateHeaderBox from "./AnimateHeaderBox";
 
@@ -7,7 +8,7 @@ interface AboutMeProps {
 
 const AboutMe: FC<AboutMeProps> = ({ about_me }) => {
   return (
-    <AnimateHeaderBox headerText="About Me">
+    <AnimateHeaderBox headerText="About Me" icon={<Megaphone size={18} />}>
       <div className="mt-3 space-y-2">
         {about_me.map((about_me) => (
           <p

@@ -15,7 +15,7 @@ const Footer: FC<FooterProps> = ({}) => {
   return (
     <footer className={bricolage_Grotesque.className}>
       <div className="customContainer mx-auto my-4">
-        <AnimateHeaderBox headerText="Contact Me" icon={<Cable size={20} />}>
+        <AnimateHeaderBox headerText="Contact Me" icon={<Cable size={18} />}>
           <div className="mt-3">
             {/* Connect Buttons */}
             <div className="flex flex-row items-center justify-start my-5 space-x-4">

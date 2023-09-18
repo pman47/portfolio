@@ -1,4 +1,5 @@
-import getExperienceData from "./getExperienceCollection";
+import getExperienceData from "./getExperienceData";
 import getUserData from "./getUserData";
+import getProjectData from "./getProjectData";
 
-export { getExperienceData, getUserData };
+export { getExperienceData, getUserData, getProjectData };
