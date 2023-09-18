@@ -14,6 +14,7 @@ const bricolage_Grotesque = Bricolage_Grotesque({
 export const revalidate = 0;
 
 export default async function Home() {
+  // Temp commit
   return (
     <main className={bricolage_Grotesque.className}>
       <BackgroundImage />
