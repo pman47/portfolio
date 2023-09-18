@@ -9,7 +9,7 @@ interface TeachIUseProps {
 const TeachIUse: FC<TeachIUseProps> = ({ technologies }) => {
   return (
     <AnimateHeaderBox headerText="Skills" icon={<Bone size={18} />}>
-      <div className="relative mt-3">
+      <div className="relative">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={`https://skillicons.dev/icons?i=${technologies}`}

@@ -16,26 +16,24 @@ const Footer: FC<FooterProps> = ({}) => {
     <footer className={bricolage_Grotesque.className}>
       <div className="customContainer mx-auto my-4">
         <AnimateHeaderBox headerText="Contact Me" icon={<Cable size={18} />}>
-          <div className="mt-3">
-            {/* Connect Buttons */}
-            <div className="flex flex-row items-center justify-start my-5 space-x-4">
-              <a
-                className="flex flex-row gap-2 items-center bg-neutral-900 py-[0.4rem] px-3 rounded-md border-[2px] border-neutral-800 transition-color duration-300 hover:bg-white hover:text-black text-sm"
-                href={CONNECTION_URLS.GITHUB}
-                target="_blank"
-              >
-                <Github size={20} />
-                <span>GitHub</span>
-              </a>
-              <a
-                className="flex flex-row gap-2 items-center bg-neutral-900 py-[0.4rem] px-3 rounded-md border-[2px] border-neutral-800 transition-color duration-300 hover:bg-[#0072b1] hover:text-white text-sm"
-                href={CONNECTION_URLS.LINKEDIN}
-                target="_blank"
-              >
-                <Linkedin size={20} />
-                <span>LinkedIn</span>
-              </a>
-            </div>
+          {/* Connect Buttons */}
+          <div className="flex flex-row items-center justify-start my-5 space-x-4">
+            <a
+              className="flex flex-row gap-2 items-center bg-neutral-900 py-[0.4rem] px-3 rounded-md border-[2px] border-neutral-800 transition-color duration-300 hover:bg-white hover:text-black text-sm"
+              href={CONNECTION_URLS.GITHUB}
+              target="_blank"
+            >
+              <Github size={20} />
+              <span>GitHub</span>
+            </a>
+            <a
+              className="flex flex-row gap-2 items-center bg-neutral-900 py-[0.4rem] px-3 rounded-md border-[2px] border-neutral-800 transition-color duration-300 hover:bg-[#0072b1] hover:text-white text-sm"
+              href={CONNECTION_URLS.LINKEDIN}
+              target="_blank"
+            >
+              <Linkedin size={20} />
+              <span>LinkedIn</span>
+            </a>
           </div>
 
           {/* Some text about contacting me */}

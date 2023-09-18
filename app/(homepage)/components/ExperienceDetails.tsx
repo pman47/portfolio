@@ -11,7 +11,7 @@ const ExperienceDetails = async ({}: ExperienceDetailsProps) => {
   if (data.length === 0) return null;
   return (
     <AnimateHeaderBox headerText="Experience" icon={<FlaskConical size={18} />}>
-      <div className="mt-3 space-y-2">
+      <div className="space-y-2">
         {data.map((experience) => (
           <ExperienceCard
             key={experience._id}
