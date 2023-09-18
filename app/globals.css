@@ -19,7 +19,7 @@
 }
 
 .border-styles {
-  @apply absolute h-[3px] w-0 -bottom-1 right-0 rounded-full bg-gradient-to-r from-[#f9b16e] to-[#f68080] transition-all duration-300;
+  @apply absolute h-[3px] max-h-[3px] w-0 -bottom-1 right-0 rounded-full bg-gradient-to-r from-[#f9b16e] to-[#f68080] transition-all duration-300;
 }
 
 .component-box:hover > .header-box > .border-line,

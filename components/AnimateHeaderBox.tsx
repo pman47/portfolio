@@ -20,7 +20,7 @@ const AnimateHeaderBox: FC<AnimateHeaderBoxProps> = ({
         </p>
         <div className="border-line border-styles z-20" />
         <div className="border-blur border-styles z-10 blur-sm" />
-        <div className="absolute h-[3px] w-full -bottom-1 bg-neutral-700/50 rounded-full z-10" />
+        <div className="absolute h-[3px] max-h-[3px] w-full -bottom-1 bg-neutral-700/50 rounded-full z-10" />
       </div>
       <div className="contents-box mt-3">{children}</div>
     </div>
