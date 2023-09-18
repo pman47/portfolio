@@ -13,7 +13,10 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
     project;
 
   return (
-    <div className="p-0 rounded-xl duration-300 transition-all space-y-2 overflow-hidden border-dashed border-neutral-700 border-[1px] group-hover:border-solid group-hover:bg-neutral-800/30 border-t-0">
+    <div
+      className="p-0 rounded-xl duration-300 transition-all space-y-2 overflow-hidden border-dashed border-neutral-700 border-[1px]
+    group hover:border-solid hover:bg-neutral-800/30 border-t-0"
+    >
       <div
         className="relative w-full aspect-video rounded-b-lg overflow-hidden cursor-pointer"
         onClick={() => window.open(hosted_url, "_blank")}

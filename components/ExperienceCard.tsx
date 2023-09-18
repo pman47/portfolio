@@ -49,15 +49,15 @@ const ExperienceCard: FC<ExperienceCardProps> = ({ experience }) => {
   return (
     <div
       className={`
-      group group-${experience.company_name}
+      group
       bg-neutral-900
       p-4
       rounded-lg
       border-dashed
       border-neutral-700
       border-[1px]
-      group-hover:border-solid
-      group-hover:bg-neutral-800/30
+      hover:border-solid
+      hover:bg-neutral-800/30
       duration-300
       transition-all
       space-y-2

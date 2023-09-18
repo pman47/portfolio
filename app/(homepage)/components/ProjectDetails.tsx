@@ -10,12 +10,10 @@ const ProjectDetails = async ({}: ProjectDetailsProps) => {
 
   return (
     <AnimateHeaderBox headerText="Projects" icon={<GanttChart size={18} />}>
-      <div className="mt-3">
-        <div className="columns-1 xs:columns-2 space-y-4">
-          {data.map((project) => (
-            <ProjectCard key={project._id} project={project} />
-          ))}
-        </div>
+      <div className="columns-1 xs:columns-2 space-y-4">
+        {data.map((project) => (
+          <ProjectCard key={project._id} project={project} />
+        ))}
       </div>
     </AnimateHeaderBox>
   );
