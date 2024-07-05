@@ -18,7 +18,6 @@ const bricolage_Grotesque = Bricolage_Grotesque({
 export const revalidate = 0;
 
 export default async function Home() {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
   const userData = await getUserData();
 
   if (!userData) {

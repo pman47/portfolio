@@ -5,6 +5,7 @@ interface userDataType {
   headline: string;
   about_me: string[];
   technologies: string;
+  resume: string;
 }
 
 interface experienceType {

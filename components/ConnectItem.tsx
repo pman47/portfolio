@@ -1,16 +1,21 @@
+import Link from "next/link";
 import { FC } from "react";
 
 interface ConnectItemProps {
   href: string;
   icon: JSX.Element;
   name: string;
+  showName: boolean;
 }
 
-const ConnectItem: FC<ConnectItemProps> = ({ href, icon, name }) => {
+const ConnectItem: FC<ConnectItemProps> = ({ href, icon, name, showName }) => {
   return (
-    <a href={href} target="_blank" aria-label={name}>
-      <div className="glassmorphism h-10 w-10">{icon}</div>
-    </a>
+    <Link href={href} target="_blank" aria-label={name}>
+      <div className="glassmorphism p-2 flex items-center justify-center gap-2">
+        <span>{icon}</span>
+        {showName && <span className="text-base">{name}</span>}
+      </div>
+    </Link>
   );
 };
 

@@ -1,5 +1,5 @@
 "use client";
-import { ExternalLink, Github } from "lucide-react";
+import { Code, ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 import { FC } from "react";
 import ConnectItem from "./ConnectItem";
@@ -40,14 +40,16 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
           <div className="flex flex-row space-x-1 items-center" id="actions">
             <ConnectItem
               href={github_url}
-              icon={<Github size={18} />}
+              icon={<Code size={18} />}
               name="Code URL"
+              showName={false}
             />
-            {/* <ConnectItem
+            <ConnectItem
               href={hosted_url}
               icon={<ExternalLink size={18} />}
               name="Code URL"
-            /> */}
+              showName={false}
+            />
           </div>
         </div>
         <p className="text-sm text-neutral-400">{description}</p>

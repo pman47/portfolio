@@ -1,11 +1,8 @@
-import "./globals.css";
 import type { Metadata } from "next";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { Analytics } from "@vercel/analytics/react";
+import "../globals.css";
 
 export const metadata: Metadata = {
-  title: "Manish Prajapati | Portfolio",
+  title: "Manish Prajapati | Resume",
   description:
     "Software Developer | Full Stack Web Developer | MERN stack Developer",
 };
@@ -20,10 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen bg-neutral-900 text-neutral-200 flex flex-col items-center justify-start">
-        <Header />
         {children}
-        <Footer />
-        <Analytics />
       </body>
     </html>
   );
