@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-neutral-900 text-neutral-200">
+      <body className="min-h-screen bg-neutral-900 text-neutral-200 flex flex-col items-center justify-start">
         <Header />
         {children}
         <Footer />
