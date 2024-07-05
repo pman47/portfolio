@@ -4,5 +4,5 @@ export const GITHUB_URL = "https://github.com/pman47";
 export const CONNECTION_URLS = {
   LINKEDIN: LINKEDIN_URL,
   GITHUB: GITHUB_URL,
-  MAIL_ME: "mailto:manishprajapatim416@gmail.com",
+  MAIL_ME: "mailto:prajapati.manish.r@gmail.com",
 };
