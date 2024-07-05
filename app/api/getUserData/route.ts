@@ -1,8 +1,7 @@
-import { NextApiRequest, NextApiResponse } from "next";
 import { getUserCollection } from "@/lib/mongodb";
 import { NextResponse } from "next/server";
 
-export async function GET(request: NextApiRequest) {
+export async function GET() {
   try {
     const collection = await getUserCollection();
     const data = await collection.findOne({});
