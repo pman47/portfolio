@@ -11,6 +11,7 @@ const PageLoader = () => {
       animate={{
         top: "-100%",
         filter: "blur(10px)",
+        scaleX: 1.2,
       }}
       transition={{
         delay: 2.5,
