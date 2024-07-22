@@ -5,19 +5,17 @@ import { motion } from "framer-motion";
 const PageLoader = () => {
   return (
     <motion.div
-      initial={{
-        top: 0,
-      }}
       animate={{
-        top: "-100%",
         filter: "blur(10px)",
-        scaleX: 1.2,
+        scale: 3,
+        opacity: 0,
+        display: "none",
       }}
       transition={{
         delay: 2.5,
         duration: 1,
       }}
-      className="absolute top-0 left-0 right-0 bottom-0 h-screen w-screen bg-neutral-900 z-[200] flex items-center justify-center flex-col gap-1"
+      className="sticky top-0 left-0 right-0 bottom-0 h-screen w-screen bg-neutral-900 z-[200] flex items-center justify-center flex-col gap-1"
     >
       <motion.div className="text-5xl font-bold flex items-center overflow-hidden">
         {"M@N!$#".split("").map((e, index) => (
