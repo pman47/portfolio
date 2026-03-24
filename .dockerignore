@@ -12,3 +12,6 @@ dist
 .DS_Store
 *.md
 main.tex
+caddy
+build.sh
+CLAUDE.md

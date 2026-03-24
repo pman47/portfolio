@@ -1,0 +1,7 @@
+pman47.cc {
+	reverse_proxy portfolio:80
+}
+
+www.pman47.cc {
+	redir https://pman47.cc{uri} permanent
+}
