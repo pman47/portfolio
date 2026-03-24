@@ -1,0 +1,198 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+\addtolength{\footskip}{-10pt}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-6pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-7pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\LARGE \scshape Manish Prajapati} \\ \vspace{1pt}
+    \small +91 9327760618 $|$ \href{mailto:prajapati.manish.r@gmail.com}{\underline{prajapati.manish.r@gmail.com}} $|$ 
+    \href{https://linkedin.com/in/pman47}{\underline{linkedin.com/in/pman47}} $|$
+    \href{https://github.com/pman47}{\underline{github.com/pman47}} $|$
+    \href{https://pman47.vercel.app/}{\underline{pman47.vercel.app}}
+\end{center}
+
+%-----------Professional Summary-----------
+\section{Professional Summary}
+    \begin{flushleft}
+    Software engineer with 3+ years of experience working across web apps, desktop tools, and network infrastructure. Currently building a router management platform at RUDRA Cybersecurity using Python, FastAPI, React, GraphQL, and RouterOS. Previously cut STT costs by 40\% with an in-house Whisper solution and pushed a Play Store app from 3.9 to 4.8 stars at English Quest.
+    \end{flushleft}
+\vspace{-8pt}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Software Engineer}{Sep. 2024 -- Present}
+      {RUDRA Cybersecurity}{Mumbai, India. (Hybrid)}
+      \resumeItemListStart
+        \resumeItem{Rewrote the data usage tracking system to work per LAN-WAN pair instead of per WAN, added cutoff support using IP route distance manipulation, and built upload/download throttling with dynamic queues. Also handled the V1 to V2 data migration.}
+        \resumeItem{Built the device lifecycle flow (activation, deactivation, and deletion) by toggling interfaces at the router level. Integrated it with the billing system which supports data plan cascading from tenant to fleet to router, along with billing exports.}
+        \resumeItem{Reworked the RBAC system to support a 5-level role hierarchy with per-module CRUD permissions. Users can be scoped to specific tenants, fleets, or routers. Used Hasura JWT custom claims to enforce row-level access control on the GraphQL frontend.}
+        \resumeItem{Added WAN speed monitoring where RouterOS scripts collect per-interface upload/download metrics every 2 minutes, data goes into PostgreSQL, and the React dashboard shows it as dual-axis area charts with date-range filtering and CSV/PNG export.}
+        \resumeItem{Redesigned the audit trail to support parent-child trail linking with UUIDs, added structured change diffs with router/fleet/tenant context, and built role-level filtered visibility in Elasticsearch. The dashboard shows linked trails with paginated history.}
+        \resumeItem{Wrote RouterOS scripts (.rsc) for L7 protocol counters, mangle rules, dynamic queues, and IP route sync. These scripts power the LAN-WAN usage collection, WAN cutoff, and route priority management across remote routers via SSH.}
+        \resumeItem{Sole developer on the router provisioning desktop app (PySide6/QML). Added white-label theming, branding package installation, captive portal setup, VPN certificate deployment, and network connectivity checks with retry logic. Also review PRs, guide junior devs, and help manage cross-service feature rollouts.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Full Stack Developer}{Aug. 2022 -- Aug. 2024}
+      {The English Quest}{India. (Remote)}
+      \resumeItemListStart
+        \resumeItem{Created and deployed an innovative Speech-to-Text STT solution using 
+OpenAI's Whisper, resulting in 40\% cost savings compared to outsourcing to 
+external STT services.}
+        \resumeItem{Engineered an advanced communication system integrating WATI APIs and Webhooks for WhatsApp messaging along with NodeMailer for email distribution, significantly enhancing message delivery efficiency by 40\% and reducing manual intervention by 20 hours monthly.}
+        \resumeItem{Increased the Play Store app rating from 3.9 to 4.8 stars by building responsive React Native components and improving the mobile app's user experience.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\href{https://pman47-linklist.vercel.app/}{\underline{Link List - Your one link for everything}}}{Jul. 2024}
+          {NextJS, ReactJS, TypeScript, TailwindCSS, MongoDB, NextAuth}{}
+          \resumeItemListStart
+            \resumeItem{A web application for managing and sharing multiple links through a single, customizable URL. Built with SSR and server actions for performance, secure authentication via NextAuth, dynamic link management, data visualization with Recharts, and responsive design.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+        \textbf{Languages}{: Python, TypeScript, JavaScript, SQL, HTML/CSS.} \\
+        \textbf{Frameworks}{: FastAPI, React, React Native, NextJS, Node.js, ExpressJS.} \\
+        \textbf{Databases}{: PostgreSQL, Redis, Elasticsearch, MongoDB.} \\
+        \textbf{Infrastructure}{: Docker, AWS (SES), Firebase, Hasura, MikroTik RouterOS.} \\
+        \textbf{Tools}{: Git, GitHub, GraphQL, Apollo Client, VS Code, JIRA, Confluence.}
+    }}
+ \end{itemize}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Bachelor of Computer Applications}{Jun. 2019 -- Apr. 2022}
+      {Gujarat University, Ahmedabad, Gujarat.}{}
+  \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\end{document}

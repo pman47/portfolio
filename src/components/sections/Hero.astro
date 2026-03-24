@@ -1,0 +1,58 @@
+---
+import { siteConfig, aboutContent, socialLinks } from "../../data/site";
+import SocialLink from "../SocialLink.astro";
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Ember Particles -->
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="ember-particle" style="left: 10%; bottom: 0; animation-duration: 12s; animation-delay: -2s;"></div>
+    <div class="ember-particle" style="left: 20%; bottom: 0; animation-duration: 16s; animation-delay: -8s;"></div>
+    <div class="ember-particle" style="left: 35%; bottom: 0; animation-duration: 10s; animation-delay: -4s;"></div>
+    <div class="ember-particle" style="left: 50%; bottom: 0; animation-duration: 18s; animation-delay: -12s;"></div>
+    <div class="ember-particle" style="left: 65%; bottom: 0; animation-duration: 14s; animation-delay: -6s;"></div>
+    <div class="ember-particle" style="left: 75%; bottom: 0; animation-duration: 11s; animation-delay: -10s;"></div>
+    <div class="ember-particle" style="left: 85%; bottom: 0; animation-duration: 15s; animation-delay: -3s;"></div>
+    <div class="ember-particle" style="left: 92%; bottom: 0; animation-duration: 13s; animation-delay: -7s;"></div>
+  </div>
+
+  <div class="relative z-10 text-center max-w-4xl mx-auto px-6" data-reveal>
+    <!-- Label -->
+    <p class="font-mono text-sm text-text-muted tracking-[0.3em] uppercase mb-6">
+      Software Engineer
+    </p>
+
+    <!-- Name -->
+    <h1 class="text-5xl sm:text-6xl lg:text-8xl font-display font-bold gradient-text-warm leading-tight">
+      {siteConfig.name}
+    </h1>
+
+    <!-- Tagline with typewriter -->
+    <p class="text-xl sm:text-2xl text-text-secondary mt-6 min-h-[2em]">
+      <span data-typewriter={aboutContent.tagline}>{aboutContent.tagline}</span>
+    </p>
+
+    <!-- Social Links -->
+    <div class="flex items-center justify-center gap-4 mt-10">
+      {socialLinks.map((link) => (
+        <SocialLink icon={link.icon} url={link.url} label={link.name} />
+      ))}
+    </div>
+
+    <!-- Location -->
+    <p class="text-xs font-mono text-text-muted flex items-center justify-center gap-1.5 mt-6">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+        <circle cx="12" cy="10" r="3"></circle>
+      </svg>
+      {siteConfig.location}
+    </p>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-text-muted">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m6 9 6 6 6-6"></path>
+    </svg>
+  </div>
+</section>

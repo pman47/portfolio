@@ -1,0 +1,31 @@
+---
+import { aboutContent } from "../../data/site";
+---
+
+<section class="py-24 lg:py-32 max-w-5xl mx-auto px-6">
+  <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+    <!-- Left: Text -->
+    <div class="lg:col-span-3" data-reveal="left">
+      <h2 class="text-4xl sm:text-5xl font-display font-bold text-text-primary mb-2">
+        About<span class="text-ember">.</span>
+      </h2>
+      <p class="text-lg text-text-secondary leading-relaxed mt-6">
+        {aboutContent.summary}
+      </p>
+    </div>
+
+    <!-- Right: Highlight Cards -->
+    <div class="lg:col-span-2 space-y-4" data-reveal-stagger data-reveal="right">
+      {aboutContent.highlights.map((highlight) => (
+        <div class="p-4 rounded-xl border border-border bg-bg-surface
+                    hover:border-ember/40 transition-all duration-300
+                    card-glow-warm">
+          <div class="flex items-center gap-3">
+            <span class="w-2 h-2 rounded-full bg-ember pulse-ember shrink-0" />
+            <span class="text-sm text-text-primary">{highlight}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

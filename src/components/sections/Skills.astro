@@ -1,0 +1,28 @@
+---
+import { skillCategories } from "../../data/site";
+import SkillBadge from "../SkillBadge.astro";
+---
+
+<section class="py-24 lg:py-32 max-w-5xl mx-auto px-6">
+  <h2
+    class="text-4xl sm:text-5xl font-display font-bold text-text-primary mb-16 text-center"
+    data-reveal
+  >
+    Skills<span class="text-ember">.</span>
+  </h2>
+
+  <div class="space-y-8" data-reveal-stagger data-reveal>
+    {skillCategories.map((category) => (
+      <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+        <h3 class="text-sm font-mono text-ember uppercase tracking-wider w-32 shrink-0">
+          {category.name}
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          {category.items.map((item) => (
+            <SkillBadge name={item} />
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

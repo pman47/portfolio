@@ -1,0 +1,40 @@
+---
+import { siteConfig, socialLinks } from "../../data/site";
+import SocialLink from "../SocialLink.astro";
+---
+
+<section class="py-24 lg:py-32 relative">
+  <!-- Warm gradient background -->
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-ember/[0.03] to-transparent"></div>
+
+  <div class="relative z-10 max-w-2xl mx-auto px-6 text-center" data-reveal>
+    <h2 class="text-4xl sm:text-5xl font-display font-bold text-text-primary mb-4">
+      Let's build something<span class="text-ember">.</span>
+    </h2>
+    <p class="text-lg text-text-secondary mb-10">
+      Interested in working together or have a question? Feel free to reach out.
+    </p>
+
+    <!-- Magnetic Button -->
+    <a
+      href={`mailto:${siteConfig.email}`}
+      data-magnetic
+      class="inline-flex items-center gap-3 px-8 py-4 rounded-2xl
+             bg-ember text-bg-deep font-display font-bold text-lg
+             hover:bg-ember-glow transition-colors duration-300
+             shadow-[0_0_30px_rgba(232,145,58,0.3)]"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+      </svg>
+      Get in Touch
+    </a>
+
+    <div class="flex items-center justify-center gap-4 mt-8">
+      {socialLinks.map((link) => (
+        <SocialLink icon={link.icon} url={link.url} label={link.name} />
+      ))}
+    </div>
+  </div>
+</section>

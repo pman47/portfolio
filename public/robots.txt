@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pman47.cc/sitemap.xml

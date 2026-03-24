@@ -1,0 +1,43 @@
+---
+import type { ExperienceItem } from "../data/site";
+import SkillBadge from "./SkillBadge.astro";
+
+interface Props {
+  experience: ExperienceItem;
+}
+
+const { experience } = Astro.props;
+const isPresent = experience.endDate === null;
+---
+
+<div class="space-y-3">
+  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+    <h3 class="text-xl font-display font-bold text-text-primary">{experience.title}</h3>
+    <span class="text-xs font-mono text-text-muted">
+      {experience.startDate} &mdash; {isPresent ? "Present" : experience.endDate}
+    </span>
+  </div>
+
+  <div class="flex items-center gap-2 text-sm text-text-secondary">
+    <span class="font-medium text-ember">{experience.company}</span>
+    <span class="text-text-muted">&middot;</span>
+    <span>{experience.location}</span>
+    <span class="text-text-muted">&middot;</span>
+    <span>{experience.type}</span>
+  </div>
+
+  <ul class="space-y-1.5 text-sm text-text-secondary">
+    {experience.highlights.map((highlight) => (
+      <li class="flex gap-2">
+        <span class="text-ember mt-1.5 shrink-0">&#8226;</span>
+        <span>{highlight}</span>
+      </li>
+    ))}
+  </ul>
+
+  <div class="flex flex-wrap gap-2 pt-1">
+    {experience.techStack.map((tech) => (
+      <SkillBadge name={tech} />
+    ))}
+  </div>
+</div>
