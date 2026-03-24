@@ -8,6 +8,7 @@ export const siteConfig = {
   email: "prajapati.manish.r@gmail.com",
   phone: "+91 9327760618",
   location: "India",
+  resumeUrl: "/Manish_Prajapati_SWE_Resume.pdf",
 } as const;
 
 export const socialLinks = [

@@ -32,12 +32,30 @@ import SocialLink from "../SocialLink.astro";
       <span data-typewriter={aboutContent.tagline}>{aboutContent.tagline}</span>
     </p>
 
-    <!-- Social Links -->
+    <!-- Social Links + Resume -->
     <div class="flex items-center justify-center gap-4 mt-10">
       {socialLinks.map((link) => (
         <SocialLink icon={link.icon} url={link.url} label={link.name} />
       ))}
     </div>
+
+    <a
+      href={siteConfig.resumeUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 mt-6 px-5 py-2.5 rounded-xl
+             border border-border text-text-secondary text-sm font-mono
+             hover:border-ember hover:text-ember transition-colors duration-300"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"></path>
+        <path d="M14 2v6h6"></path>
+        <path d="M16 13H8"></path>
+        <path d="M16 17H8"></path>
+        <path d="M10 9H8"></path>
+      </svg>
+      Resume
+    </a>
 
     <!-- Location -->
     <p class="text-xs font-mono text-text-muted flex items-center justify-center gap-1.5 mt-6">
