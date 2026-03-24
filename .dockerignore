@@ -1,0 +1,14 @@
+node_modules
+dist
+.astro
+.git
+.github
+.claude
+.vscode
+.idea
+.vercel
+.env
+.env.*
+.DS_Store
+*.md
+main.tex
