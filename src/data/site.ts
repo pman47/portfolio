@@ -53,6 +53,7 @@ export const experiences: ExperienceItem[] = [
   {
     title: "Software Engineer",
     company: "RUDRA Cybersecurity",
+    companyUrl: "https://rudrasecure.com/",
     location: "Mumbai, India",
     type: "Hybrid",
     startDate: "Sep 2024",
@@ -81,14 +82,17 @@ export const experiences: ExperienceItem[] = [
   {
     title: "Full Stack Developer",
     company: "The English Quest",
+    companyUrl: "https://www.theenglishquest.com/",
     location: "India",
     type: "Remote",
     startDate: "Aug 2022",
     endDate: "Aug 2024",
     highlights: [
       "Created in-house Speech-to-Text solution using OpenAI Whisper, cutting STT costs by 40% vs. external services.",
-      "Engineered WhatsApp integration (WATI APIs/Webhooks) and email distribution (NodeMailer), improving delivery efficiency by 40%.",
+      "Engineered WhatsApp integration (WATI APIs/Webhooks) and email distribution (NodeMailer), improving delivery efficiency by 40% and reducing manual intervention by 20 hours monthly.",
+      "Implemented User Activity History functionality in CRM Portal to track user history along with timestamps and other details.",
       "Increased Play Store app rating from 3.9 to 4.8 stars by building responsive React Native components and improving UX.",
+      "Crafted responsive and modular components leveraging ReactJS for web applications and React Native for cross-platform mobile applications.",
     ],
     techStack: [
       "React",
@@ -99,6 +103,29 @@ export const experiences: ExperienceItem[] = [
       "MongoDB",
       "Firebase",
       "AWS SES",
+    ],
+  },
+  {
+    title: "Full Stack Development Intern",
+    company: "Newton School",
+    companyUrl: "https://www.newtonschool.co/",
+    location: "India",
+    type: "Remote",
+    startDate: "Dec 2021",
+    endDate: "Jun 2022",
+    highlights: [
+      "Completed an intensive full-stack development bootcamp covering data structures, algorithms, and web development with JavaScript, ReactJS, Node.js, Express.js, and MongoDB.",
+      "Built applications including an Instagram Clone and Marvel App, applying component-based architecture with ReactJS, API integration, and responsive design.",
+      "Competed in platform-hosted coding contests, strengthening problem-solving and algorithmic thinking skills.",
+    ],
+    techStack: [
+      "JavaScript",
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "CSS",
+      "Bootstrap",
     ],
   },
 ];
@@ -126,6 +153,19 @@ export const projects: ProjectItem[] = [
     ],
     liveUrl: "https://pman47-linklist.vercel.app/",
     githubUrl: "https://github.com/pman47/link-list",
+  },
+  {
+    title: "The English Quest - Mobile App",
+    description:
+      "A mobile app designed for students who wish to study and improve their English. Built with React Native Expo and deployed on the Play Store, achieving a 4.8-star rating.",
+    techStack: [
+      "React",
+      "React Native",
+      "Expo",
+      "Microsoft Azure",
+    ],
+    liveUrl:
+      "https://play.google.com/store/apps/details?id=tqel.queensenglish.android.app",
   },
 ];
 

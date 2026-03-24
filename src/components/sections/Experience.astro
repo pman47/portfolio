@@ -5,7 +5,7 @@ import ExperienceCard from "../ExperienceCard.astro";
 
 <section class="py-24 lg:py-32 max-w-5xl mx-auto px-6">
   <h2
-    class="text-4xl sm:text-5xl font-display font-bold text-text-primary mb-16 text-center"
+    class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-text-primary mb-10 sm:mb-16 text-center"
     data-reveal
   >
     Experience<span class="text-ember">.</span>
@@ -18,7 +18,7 @@ import ExperienceCard from "../ExperienceCard.astro";
     {experiences.map((exp, i) => (
       <div
         class:list={[
-          "relative flex mb-12 last:mb-0",
+          "relative flex mb-8 sm:mb-12 last:mb-0",
           i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse",
         ]}
         data-reveal={i % 2 === 0 ? "left" : "right"}
@@ -37,7 +37,7 @@ import ExperienceCard from "../ExperienceCard.astro";
         <!-- Card -->
         <div
           class:list={[
-            "lg:w-[calc(50%-2rem)] p-6 rounded-2xl border border-border bg-bg-surface",
+            "lg:w-[calc(50%-2rem)] p-4 sm:p-6 rounded-2xl border border-border bg-bg-surface",
             "card-glow-warm hover:border-border-hover transition-all duration-300",
             i % 2 === 0 ? "lg:mr-auto" : "lg:ml-auto",
           ]}

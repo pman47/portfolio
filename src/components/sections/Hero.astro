@@ -16,19 +16,19 @@ import SocialLink from "../SocialLink.astro";
     <div class="ember-particle" style="left: 92%; bottom: 0; animation-duration: 13s; animation-delay: -7s;"></div>
   </div>
 
-  <div class="relative z-10 text-center max-w-4xl mx-auto px-6" data-reveal>
+  <div class="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6" data-reveal>
     <!-- Label -->
     <p class="font-mono text-sm text-text-muted tracking-[0.3em] uppercase mb-6">
       Software Engineer
     </p>
 
     <!-- Name -->
-    <h1 class="text-5xl sm:text-6xl lg:text-8xl font-display font-bold gradient-text-warm leading-tight">
+    <h1 class="text-4xl sm:text-6xl lg:text-8xl font-display font-bold gradient-text-warm leading-tight">
       {siteConfig.name}
     </h1>
 
     <!-- Tagline with typewriter -->
-    <p class="text-xl sm:text-2xl text-text-secondary mt-6 min-h-[2em]">
+    <p class="text-lg sm:text-xl lg:text-2xl text-text-secondary mt-6 min-h-[2em]">
       <span data-typewriter={aboutContent.tagline}>{aboutContent.tagline}</span>
     </p>
 

@@ -18,9 +18,20 @@ const isPresent = experience.endDate === null;
     </span>
   </div>
 
-  <div class="flex items-center gap-2 text-sm text-text-secondary">
-    <span class="font-medium text-ember">{experience.company}</span>
-    <span class="text-text-muted">&middot;</span>
+  <div class="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-sm text-text-secondary">
+    {experience.companyUrl ? (
+      <a
+        href={experience.companyUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-medium text-ember hover:text-ember-glow transition-colors link-underline"
+      >
+        {experience.company}
+      </a>
+    ) : (
+      <span class="font-medium text-ember">{experience.company}</span>
+    )}
+    <span class="text-text-muted hidden sm:inline">&middot;</span>
     <span>{experience.location}</span>
     <span class="text-text-muted">&middot;</span>
     <span>{experience.type}</span>
