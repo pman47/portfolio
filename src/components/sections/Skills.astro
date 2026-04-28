@@ -11,18 +11,28 @@ import SkillBadge from "../SkillBadge.astro";
     Skills<span class="text-ember">.</span>
   </h2>
 
-  <div class="space-y-8" data-reveal-stagger data-reveal>
+  <div class="space-y-6 sm:space-y-8" data-reveal-stagger data-reveal>
     {skillCategories.map((category) => (
-      <div class="flex flex-col sm:flex-row sm:items-center gap-4">
-        <h3 class="text-sm font-mono text-ember uppercase tracking-wider sm:w-32 sm:shrink-0">
+      <div class="grid grid-cols-1 sm:grid-cols-[10rem_1fr] gap-3 sm:gap-6 items-baseline">
+        <h3 class="text-sm font-mono text-ember uppercase tracking-[0.2em]">
           {category.name}
         </h3>
         <div class="flex flex-wrap gap-2">
-          {category.items.map((item) => (
+          {category.primary.map((item) => (
+            <SkillBadge name={item} primary />
+          ))}
+          {category.supporting.map((item) => (
             <SkillBadge name={item} />
           ))}
         </div>
       </div>
     ))}
   </div>
+
+  <p class="mt-10 text-xs font-mono text-text-muted text-center">
+    <span class="inline-block w-2 h-2 rounded-sm bg-ember/40 align-middle mr-2"></span>
+    primary daily-driver stack
+    <span class="inline-block w-2 h-2 rounded-sm bg-bg-elevated border border-border align-middle mx-2 ml-6"></span>
+    supporting tools
+  </p>
 </section>

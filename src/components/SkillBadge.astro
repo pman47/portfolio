@@ -1,15 +1,20 @@
 ---
 interface Props {
   name: string;
+  primary?: boolean;
 }
 
-const { name } = Astro.props;
+const { name, primary = false } = Astro.props;
 ---
 
 <span
-  class="inline-block px-2.5 py-1 text-xs sm:px-4 sm:py-2 sm:text-sm font-mono rounded-xl
-         border border-border bg-bg-surface text-text-secondary
-         skill-badge-interactive cursor-default select-none"
+  class:list={[
+    "inline-block px-2.5 py-1 text-xs sm:px-4 sm:py-2 sm:text-sm font-mono rounded-xl",
+    "skill-badge-interactive cursor-default select-none",
+    primary
+      ? "border border-ember/40 bg-ember/10 text-spark"
+      : "border border-border bg-bg-surface text-text-secondary",
+  ]}
 >
   {name}
 </span>

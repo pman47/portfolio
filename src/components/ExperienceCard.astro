@@ -1,5 +1,6 @@
 ---
 import type { ExperienceItem } from "../data/site";
+import { splitIntoSegments } from "../lib/metric-chips";
 import SkillBadge from "./SkillBadge.astro";
 
 interface Props {
@@ -10,45 +11,55 @@ const { experience } = Astro.props;
 const isPresent = experience.endDate === null;
 ---
 
-<div class="space-y-3">
-  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-    <h3 class="text-xl font-display font-bold text-text-primary">{experience.title}</h3>
-    <span class="text-xs font-mono text-text-muted">
-      {experience.startDate} &mdash; {isPresent ? "Present" : experience.endDate}
-    </span>
+<div class="space-y-4">
+  <div class="space-y-1">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+      <h3 class="text-xl lg:text-2xl font-display font-bold text-text-primary">
+        {experience.title}
+        <span class="text-text-muted font-normal"> @ </span>
+        {experience.companyUrl ? (
+          <a
+            href={experience.companyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-ember hover:text-ember-glow transition-colors link-underline"
+          >
+            {experience.company}
+          </a>
+        ) : (
+          <span class="text-ember">{experience.company}</span>
+        )}
+      </h3>
+    </div>
+
+    <div class="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs sm:text-sm text-text-muted font-mono">
+      <span>{experience.startDate} &mdash; {isPresent ? "Present" : experience.endDate}</span>
+      <span>&middot;</span>
+      <span>{experience.location}</span>
+      <span>&middot;</span>
+      <span>{experience.type}</span>
+    </div>
   </div>
 
-  <div class="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-sm text-text-secondary">
-    {experience.companyUrl ? (
-      <a
-        href={experience.companyUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="font-medium text-ember hover:text-ember-glow transition-colors link-underline"
-      >
-        {experience.company}
-      </a>
-    ) : (
-      <span class="font-medium text-ember">{experience.company}</span>
-    )}
-    <span class="text-text-muted hidden sm:inline">&middot;</span>
-    <span>{experience.location}</span>
-    <span class="text-text-muted">&middot;</span>
-    <span>{experience.type}</span>
+  <div class="flex flex-wrap gap-2">
+    {experience.techStack.map((tech) => <SkillBadge name={tech} />)}
   </div>
 
-  <ul class="space-y-1.5 text-sm text-text-secondary">
+  <ul class="space-y-4 pt-1">
     {experience.highlights.map((highlight) => (
-      <li class="flex gap-2">
-        <span class="text-ember mt-1.5 shrink-0">&#8226;</span>
-        <span>{highlight}</span>
+      <li class="flex gap-3">
+        <span class="text-ember mt-2 shrink-0 text-xs leading-none">&#9656;</span>
+        <div class="text-sm sm:text-[0.95rem] leading-relaxed">
+          <span class="font-display font-semibold text-text-primary">
+            {highlight.headline}
+          </span>{" "}
+          <span class="text-text-secondary">
+            {splitIntoSegments(highlight.detail).map((seg) =>
+              seg.isChip ? <span class="metric-chip">{seg.text}</span> : seg.text,
+            )}
+          </span>
+        </div>
       </li>
     ))}
   </ul>
-
-  <div class="flex flex-wrap gap-2 pt-1">
-    {experience.techStack.map((tech) => (
-      <SkillBadge name={tech} />
-    ))}
-  </div>
 </div>

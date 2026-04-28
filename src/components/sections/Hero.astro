@@ -32,6 +32,13 @@ import SocialLink from "../SocialLink.astro";
       <span data-typewriter={aboutContent.tagline}>{aboutContent.tagline}</span>
     </p>
 
+    <!-- Status pill -->
+    <div class="inline-flex items-center gap-2 mt-6 px-4 py-1.5 rounded-full
+                border border-ember/30 bg-ember/5 text-sm font-mono text-text-secondary">
+      <span class="w-2 h-2 rounded-full bg-ember pulse-ember shrink-0"></span>
+      <span>Currently <span class="text-text-muted">@</span> <span class="text-ember">{aboutContent.currentlyAt}</span></span>
+    </div>
+
     <!-- Social Links + Resume -->
     <div class="flex items-center justify-center gap-4 mt-10">
       {socialLinks.map((link) => (
