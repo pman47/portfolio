@@ -29,9 +29,9 @@ export const aboutContent = {
   headline: "Software Engineer",
   tagline: "Engineering software across the full stack.",
   summary:
-    "Software engineer with 3+ years of experience working across web apps, desktop tools, and network infrastructure. Currently building a router management platform at RUDRA Cybersecurity using Python, FastAPI, React, GraphQL, and RouterOS. Previously cut STT costs by 40% with an in-house Whisper solution and pushed a Play Store app from 3.9 to 4.8 stars at English Quest.",
+    "Software engineer with 3.5+ years of experience across web apps, desktop tools, and network infrastructure. Currently at RUDRA Cybersecurity, building the platform behind 1,300+ production routers and 370+ users. Previously cut STT costs by 40% with an in-house Whisper pipeline and drove a Play Store app from 3.9 to 4.8 stars at English Quest.",
   highlights: [
-    "3+ years of professional experience",
+    "3.5+ years of professional experience",
     "Full-stack: Python, TypeScript, React, FastAPI",
     "Router-level network automation with MikroTik RouterOS",
     "Shipped mobile app rated 4.8 stars on Play Store",
@@ -60,16 +60,19 @@ export const experiences: ExperienceItem[] = [
     startDate: "Sep 2024",
     endDate: null,
     highlights: [
-      "Rewrote data usage tracking per LAN-WAN pair with cutoff support and dynamic queue throttling; handled V1-to-V2 data migration.",
-      "Built device lifecycle flow (activation/deactivation/deletion) integrated with billing system supporting plan cascading and billing exports.",
-      "Reworked RBAC to a 5-level role hierarchy with per-module CRUD, tenant/fleet/router scoping, and Hasura JWT row-level access control.",
-      "Added WAN speed monitoring: RouterOS scripts collect metrics every 2 min, stored in PostgreSQL, visualized as dual-axis area charts.",
-      "Redesigned audit trail with parent-child UUID linking, structured change diffs, and Elasticsearch-backed role-filtered visibility.",
-      "Sole developer on router provisioning desktop app (PySide6/QML) with white-label theming, VPN cert deployment, and connectivity retry logic.",
+      "Rewrote data usage tracking across 1,300+ production routers (500+ GB/day) from per-WAN to per LAN-WAN pair for 3x finer-grained visibility. Added IP-route-distance-based WAN cutoff, queue-based upload/download throttling, and a version-gated rollout that migrates the last 6 months of usage data per-router on reset, with zero fleet-wide downtime.",
+      "Migrated the audit trail from Postgres to Elasticsearch. The prior free-text description column timed out on ILIKE searches (1+ min); queries now return in under a second across 10K+ events/day. Re-modeled parent-child trail linking and structured change diffs (router/fleet/tenant context) for the Elastic schema, with role-level filtered visibility and cursor-based pagination.",
+      "Reworked the RBAC system into a 5-level role hierarchy with per-module CRUD permissions across 40+ modules. Users can be scoped to specific tenants, fleets, or routers. Used Hasura JWT custom claims to enforce row-level access control on the GraphQL frontend, now governing 370+ users and enabling onboarding of larger enterprise tenants.",
+      "Designed static VPN IP assignment across 2 backend services, replacing OpenVPN's dynamic pool (where IPs drifted on reconnect and broke DB references on pool-state loss) with a PostgreSQL pool written to OpenVPN CCD files. Concurrency-safe allocation, conflict detection with bounded retry, transactional rollback on failure, and automatic IP reuse when a device is re-created with the same serial number.",
+      "Ported backend services from Python Prisma to asyncpg with raw SQL. Cut entry-point import time from around 27s to under 1s by eliminating the Prisma client init that ran on every service cold start. Replaced Prisma's application-level relation loading with database-side SQL JOINs, cutting query time on relation-heavy reads.",
+      "Built WAN speed monitoring as a net-new capability: RouterOS scripts log per-interface upload/download metrics to an on-router file every 2 minutes, while the backend SSH-polls each router every 15 minutes to ingest, persisting 500K+ datapoints/day into PostgreSQL with indexes tuned for date-range queries. The React dashboard renders dual-axis area charts with date-range filtering and CSV/PNG export.",
+      "Shipped device lifecycle (activation, deactivation, scheduled toggles, deletion) with reversible network-layer enforcement that disables router interfaces, blocks the OpenVPN IP, and halts billing from the exact deactivation timestamp, replacing a delete-only pause model. Integrated with the billing system, including billing exports.",
+      "Maintained and extended the router provisioning desktop app used to flash every production router. Added white-label theming (3 brands), branding package install, captive portal setup, VPN certificate deployment, and connectivity checks with retry. Migrated the whole utility from PySide6/QML to Electron.",
     ],
     techStack: [
       "Python",
       "FastAPI",
+      "asyncpg",
       "React",
       "GraphQL",
       "PostgreSQL",
@@ -77,7 +80,9 @@ export const experiences: ExperienceItem[] = [
       "Redis",
       "Hasura",
       "RouterOS",
+      "OpenVPN",
       "Docker",
+      "Electron",
     ],
   },
   {
@@ -193,11 +198,11 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     name: "Databases",
-    items: ["PostgreSQL", "Redis", "Elasticsearch", "MongoDB"],
+    items: ["PostgreSQL", "Redis", "Elasticsearch"],
   },
   {
     name: "Infrastructure",
-    items: ["Docker", "AWS (SES)", "Firebase", "Hasura", "MikroTik RouterOS"],
+    items: ["Docker", "Hasura", "MikroTik RouterOS"],
   },
   {
     name: "Tools",
