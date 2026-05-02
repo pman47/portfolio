@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Manish Prajapati",
   title: "Manish Prajapati | Software Engineer",
   description:
-    "Software engineer with 3+ years of experience building web apps, desktop tools, and network infrastructure. Currently at RUDRA Cybersecurity.",
+    "Software engineer with 3.5+ years of experience building web apps, desktop tools, and network infrastructure. Currently at RUDRA Cybersecurity.",
   url: "https://pman47.cc",
   ogImage: "/og-image.png",
   email: "prajapati.manish.r@gmail.com",
@@ -69,22 +69,22 @@ export const experiences: ExperienceItem[] = [
       {
         headline: "3x finer usage visibility across 1,300+ routers.",
         detail:
-          "Rewrote data usage tracking from per-WAN to per LAN-WAN pair across 1,300+ production routers (500+ GB/day). Added IP-route-distance-based WAN cutoff, queue-based upload/download throttling, and a version-gated rollout that migrates the last 6 months of usage data per-router on reset, with zero fleet-wide downtime.",
+          "Rewrote data usage tracking from per-WAN to per LAN-WAN pair across 1,300+ production routers (500+ GB/day). Added WAN cutoff, queue-based upload/download throttling, and a zero-downtime rollout that migrates the last 6 months of usage data per-router on reset.",
       },
       {
-        headline: "ILIKE timeouts → sub-second search across 10K+ events/day.",
+        headline: "Search times: 1+ min → under a second.",
         detail:
-          "Migrated the audit trail from Postgres to Elasticsearch. The prior free-text description column timed out on ILIKE searches (1+ min); queries now return in under a second. Re-modeled parent-child trail linking and structured change diffs (router/fleet/tenant context) for the Elastic schema, with role-level filtered visibility and cursor-based pagination.",
+          "Migrated the audit trail from Postgres to Elasticsearch to fix slow text searches that timed out at over a minute. Queries now return in under a second across 10K+ events/day. Re-modeled the schema with parent-child trail linking and structured change diffs, with role-level filtered visibility and cursor-based pagination.",
       },
       {
         headline: "Real RBAC: 5 levels, 40+ modules, 370+ users.",
         detail:
-          "Rebuilt the RBAC system into a 5-level role hierarchy with per-module CRUD permissions; users can be scoped to specific tenants, fleets, or routers. Used Hasura JWT custom claims to enforce row-level access control on the GraphQL frontend, now governing 370+ users and enabling onboarding of larger enterprise tenants.",
+          "Rebuilt the RBAC system into a 5-level role hierarchy with per-module CRUD permissions across 40+ modules, with multi-level scope support. Used Hasura JWT custom claims to enforce row-level access control on the GraphQL frontend, now governing 370+ users and enabling onboarding of larger enterprise tenants.",
       },
       {
-        headline: "Killed OpenVPN's drifting IPs with a static pool.",
+        headline: "Static VPN IP pool ends reconnect drift.",
         detail:
-          "Designed static VPN IP assignment across 2 backend services, replacing OpenVPN's dynamic pool (where IPs drifted on reconnect and broke DB references on pool-state loss) with a PostgreSQL pool written to OpenVPN CCD files. Concurrency-safe allocation, conflict detection with bounded retry, transactional rollback on failure, and automatic IP reuse when a device is re-created with the same serial number.",
+          "Designed static VPN IP assignment across 2 backend services, replacing a dynamic IP pool that drifted on reconnect with a PostgreSQL-backed allocation synced to the VPN server's per-client config. Concurrency-safe assignment, conflict detection with bounded retry, transactional rollback on failure, and automatic IP reuse on device re-creation.",
       },
       {
         headline: "27s → <1s cold start: ditched Prisma for asyncpg.",
@@ -94,12 +94,12 @@ export const experiences: ExperienceItem[] = [
       {
         headline: "Net-new WAN speed monitoring at 500K+ datapoints/day.",
         detail:
-          "RouterOS scripts log per-interface upload/download metrics to an on-router file every 2 minutes, while the backend SSH-polls each router every 15 minutes to ingest, persisting 500K+ datapoints/day into PostgreSQL with indexes tuned for date-range queries. The React dashboard renders dual-axis area charts with date-range filtering and CSV/PNG export.",
+          "Built WAN speed monitoring as a net-new capability with a two-tier ingress: routers log per-interface upload/download metrics to a local buffer, and the backend polls each router on a schedule to ingest, persisting 500K+ datapoints/day into PostgreSQL with date-range-tuned indexes. The React dashboard renders dual-axis area charts with date-range filtering and CSV/PNG export.",
       },
       {
         headline: "Reversible device lifecycle, billing-aware to the second.",
         detail:
-          "Activation, deactivation, scheduled toggles, and deletion with reversible network-layer enforcement that disables router interfaces, blocks the OpenVPN IP, and halts billing from the exact deactivation timestamp, replacing a delete-only pause model. Integrated with the billing system, including billing exports.",
+          "Activation, deactivation, scheduled toggles, and deletion with reversible network-layer enforcement and billing that halts from the exact deactivation timestamp, replacing a delete-only pause model. Integrated with the billing system, including billing exports.",
       },
       {
         headline: "Provisioning desktop app: PySide6/QML → Electron.",
@@ -140,7 +140,7 @@ export const experiences: ExperienceItem[] = [
       {
         headline: "WhatsApp + email automation: 20 hours/month back.",
         detail:
-          "Engineered WhatsApp integration (WATI APIs/Webhooks) and email distribution (NodeMailer), improving delivery efficiency by 40% and reducing manual intervention by 20 hours monthly.",
+          "Built the messaging stack on WATI WhatsApp APIs and webhooks plus NodeMailer for email, lifting delivery efficiency 40% and saving 20 hours/month of manual work.",
       },
       {
         headline: "Audit-style activity history inside the CRM.",
@@ -155,7 +155,7 @@ export const experiences: ExperienceItem[] = [
       {
         headline: "One component layer for web and mobile.",
         detail:
-          "Crafted responsive, modular components leveraging ReactJS for web applications and React Native for cross-platform mobile applications.",
+          "Built modular, responsive components shared between ReactJS for web and React Native for cross-platform mobile.",
       },
     ],
     techStack: [
@@ -255,8 +255,8 @@ export interface SkillCategory {
 export const skillCategories: SkillCategory[] = [
   {
     name: "Languages",
-    primary: ["Python", "JavaScript", "SQL"],
-    supporting: ["TypeScript", "SQL", "HTML/CSS"],
+    primary: ["Python", "TypeScript", "JavaScript", "SQL"],
+    supporting: ["HTML/CSS"],
   },
   {
     name: "Frameworks",
@@ -311,7 +311,7 @@ export const contactChannels: ContactChannel[] = [
 export const education = {
   degree: "Bachelor of Computer Applications",
   institution: "Gujarat University",
-  location: "Ahmedabad, Gujarat",
+  location: "Ahmedabad, India",
   startYear: "2019",
   endYear: "2022",
 } as const;
