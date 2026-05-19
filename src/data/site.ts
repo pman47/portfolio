@@ -256,12 +256,17 @@ export const skillCategories: SkillCategory[] = [
   {
     name: "Languages",
     primary: ["Python", "TypeScript", "JavaScript", "SQL"],
-    supporting: ["HTML/CSS"],
+    supporting: ["Bash", "HTML/CSS"],
   },
   {
-    name: "Frameworks",
-    primary: ["FastAPI", "React"],
-    supporting: ["React Native", "Next.js", "Node.js", "Express.js"],
+    name: "Backend & API",
+    primary: ["FastAPI", "Node.js", "REST APIs", "GraphQL"],
+    supporting: ["Express.js", "Async I/O", "JWT", "OAuth"],
+  },
+  {
+    name: "Frontend",
+    primary: ["React", "React Native", "Next.js"],
+    supporting: ["Apollo Client"],
   },
   {
     name: "Databases",
@@ -270,13 +275,13 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     name: "Infrastructure",
-    primary: ["Docker", "Hasura"],
+    primary: ["Docker", "Linux", "Hasura"],
     supporting: ["MikroTik RouterOS"],
   },
   {
-    name: "Tools",
-    primary: ["Git", "GraphQL"],
-    supporting: ["GitHub", "Apollo Client"],
+    name: "Concepts",
+    primary: ["Microservices", "Distributed Systems", "System Design", "RBAC"],
+    supporting: ["Time-series Ingestion", "Event-driven Architecture"],
   },
 ];
 
